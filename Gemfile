@@ -12,12 +12,12 @@ end
 # We need a newish Rake since Active Job sets its test tasks' descriptions.
 gem "rake", ">= 13"
 
-gem "sprockets-rails", ">= 2.0.0"
-gem "propshaft", ">= 0.1.7"
-gem "capybara", ">= 3.38"
+gem "sprockets-rails", ">= 3.4.2"
+gem "propshaft", ">= 0.6.4"
+gem "capybara", ">= 3.38.0"
 gem "selenium-webdriver", ">= 4.0.0"
 
-gem "rack-cache", "~> 1.2"
+gem "rack-cache", "~> 1.13", ">= 1.13.0"
 gem "stimulus-rails"
 gem "turbo-rails"
 gem "jsbundling-rails"
@@ -71,7 +71,7 @@ gem "web-console", require: false
 
 # Action Pack and railties
 rack_version = ENV.fetch("RACK", "~> 2.0") # Change to ~> 3 after #46594 is merged.
-gem "rack", rack_version
+gem "rack", ">= 2.2.6.3", rack_version
 
 # Active Job
 group :job do
