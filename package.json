@@ -6,6 +6,6 @@
     "activestorage"
   ],
   "dependencies": {
-    "webpack": "^4.17.1"
+    "webpack": "^5.1.1"
   }
 }
