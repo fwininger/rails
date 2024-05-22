@@ -9,7 +9,7 @@ gem "minitest", ">= 5.15.0", "< 5.22.0"
 gem "rake", ">= 13"
 
 gem "sprockets-rails", ">= 2.0.0"
-gem "propshaft", ">= 0.1.7"
+gem "propshaft", ">= 0.9.0"
 gem "capybara", ">= 3.39"
 gem "selenium-webdriver", ">= 4.20.0"
 
