@@ -13,7 +13,7 @@ gem "releaser", path: "tools/releaser"
 gem "sprockets-rails", ">= 2.0.0", require: false
 gem "propshaft", ">= 0.1.7", "!= 1.0.1"
 gem "capybara", ">= 3.39"
-gem "selenium-webdriver", ">= 4.20.0"
+gem "selenium-webdriver", ">= 4.26.0"
 
 gem "rack-cache", "~> 1.2"
 gem "stimulus-rails"
@@ -50,15 +50,15 @@ group :rubocop do
   gem "rubocop-minitest", require: false
   gem "rubocop-packaging", require: false
   gem "rubocop-performance", require: false
-  gem "rubocop-rails", require: false
+  gem "rubocop-rails", ">= 2.27.0", require: false
   gem "rubocop-md", require: false
 
   # This gem is used in Railties tests so it must be a development dependency.
-  gem "rubocop-rails-omakase", require: false
+  gem "rubocop-rails-omakase", ">= 1.1.0", require: false
 end
 
 group :mdl do
-  gem "mdl", "!= 0.13.0", require: false
+  gem "mdl", ">= 0.13.0", require: false
 end
 
 group :doc do
@@ -96,9 +96,9 @@ gem "useragent", require: false
 
 # Active Job
 group :job do
-  gem "resque", require: false
-  gem "resque-scheduler", require: false
-  gem "sidekiq", require: false
+  gem "resque", ">= 2.7.0", require: false
+  gem "resque-scheduler", ">= 4.11.0", require: false
+  gem "sidekiq", ">= 7.3.3", require: false
   gem "sucker_punch", require: false
   gem "queue_classic", ">= 4.0.0", require: false, platforms: :ruby
   gem "sneakers", require: false
@@ -127,7 +127,7 @@ end
 
 # Action Mailbox
 gem "aws-sdk-sns", require: false
-gem "webmock"
+gem "webmock", ">= 3.25.0"
 gem "httpclient", github: "nahi/httpclient", branch: "master", require: false
 
 # Add your own local bundler stuff.
