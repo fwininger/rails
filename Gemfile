@@ -9,7 +9,7 @@ gem "minitest-mock"
 gem "releaser", path: "tools/releaser"
 
 gem "sprockets-rails", ">= 2.0.0", require: false
-gem "propshaft", ">= 0.1.7", "!= 1.0.1"
+gem "propshaft", ">= 1.3.2"
 gem "capybara", ">= 3.39"
 gem "selenium-webdriver", ">= 4.20.0"
 
@@ -37,7 +37,7 @@ gem "argon2", "~> 2.3.2", require: false
 gem "terser", ">= 1.1.4", require: false
 
 # Explicitly avoid 1.x that doesn't support Ruby 2.4+
-gem "json", ">= 2.0.0", "!=2.7.0"
+gem "json", ">= 2.15.2.1"
 
 # Workaround until all supported Ruby versions ship with uri version 0.13.1 or higher.
 gem "uri", ">= 0.13.1", require: false
@@ -45,15 +45,15 @@ gem "uri", ">= 0.13.1", require: false
 gem "prism"
 
 group :rubocop do
-  gem "rubocop", "1.79.2", require: false
-  gem "rubocop-minitest", require: false
+  gem "rubocop", "1.80.0", require: false
+  gem "rubocop-minitest", ">= 0.38.0", require: false
   gem "rubocop-packaging", require: false
-  gem "rubocop-performance", require: false
-  gem "rubocop-rails", require: false
-  gem "rubocop-md", require: false
+  gem "rubocop-performance", ">= 1.25.0", require: false
+  gem "rubocop-rails", ">= 2.31.0", require: false
+  gem "rubocop-md", ">= 2.0.2", require: false
 
   # This gem is used in Railties tests so it must be a development dependency.
-  gem "rubocop-rails-omakase", require: false
+  gem "rubocop-rails-omakase", ">= 1.1.0", require: false
 end
 
 group :mdl do
@@ -80,22 +80,22 @@ gem "msgpack", ">= 1.7.0", require: false
 gem "bootsnap", ">= 1.4.4", require: false
 gem "webrick", require: false
 gem "jbuilder", require: false
-gem "web-console", require: false
+gem "web-console", ">= 4.3.0", require: false
 
 # Action Pack and railties
 rack_version = ENV.fetch("RACK", "~> 3.0")
 if rack_version != "head"
-  gem "rack", rack_version
+  gem "rack", ">= 3.2.6", rack_version
 else
-  gem "rack", git: "https://github.com/rack/rack.git", branch: "main"
+  gem "rack", ">= 3.2.6", git: "https://github.com/rack/rack.git", branch: "main"
 end
 
 gem "useragent", require: false
 
 # Active Job
 group :job do
-  gem "resque", require: false
-  gem "resque-scheduler", require: false
+  gem "resque", ">= 3.0.0", require: false
+  gem "resque-scheduler", ">= 5.0.0", require: false
   gem "queue_classic", ">= 4.0.0", require: false, platforms: :ruby
   gem "sneakers", require: false
   gem "backburner", require: false
@@ -115,7 +115,7 @@ end
 # Active Storage
 group :storage do
   gem "aws-sdk-s3", require: false
-  gem "google-cloud-storage", "~> 1.11", require: false
+  gem "google-cloud-storage", "~> 1.55", ">= 1.55.0", require: false
 
   gem "image_processing", "~> 1.2"
 end
@@ -133,7 +133,7 @@ group :test do
 
   platforms :mri do
     gem "stackprof"
-    gem "debug", ">= 1.1.0", require: false
+    gem "debug", ">= 1.11.0", require: false
   end
 
   # Needed for Railties tests because it is included in generated apps.
